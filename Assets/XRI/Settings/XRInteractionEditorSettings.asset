@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: XRInteractionEditorSettings
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit.Editor:UnityEditor.XR.Interaction.Toolkit:XRInteractionEditorSettings
-  m_InputReaderPropertyDrawerMode: 0
+  m_InteractionLayerUpdaterShown: 1
+  m_ShowOldInteractionLayerMaskInInspector: 0
