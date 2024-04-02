@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class StoreKeyPress : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameObject MainEntity;
     void Start()
     {
-        Debug.Log(gameObject.tag);
+        MainEntity = GameObject.FindGameObjectWithTag("ENTITY");
+        Debug.Log("ENTITY CONNECTED");
     }
-
 
     public void SaveInput()
 	{
-
+        string CurrentTag = gameObject.tag;
+        Debug.Log(CurrentTag);
+        MainEntity.GetComponent<_ENTITY>().AddToString(CurrentTag);
 	}
+
+    public void CallReset()
+    {
+        MainEntity.GetComponent<_ENTITY>().HARDRESET();
+    }
 }

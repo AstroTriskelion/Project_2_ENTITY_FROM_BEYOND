@@ -13,6 +13,7 @@ TagManager:
   - LA
   - SI
   - DO/8
+  - ENTITY
   layers:
   - Default
   - TransparentFX
