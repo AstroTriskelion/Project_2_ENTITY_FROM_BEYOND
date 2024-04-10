@@ -24405,6 +24405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyInputs: 
+  console: {fileID: 568336811}
 --- !u!4 &2115374538
 Transform:
   m_ObjectHideFlags: 0
