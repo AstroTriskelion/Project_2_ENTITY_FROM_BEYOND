@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class _ENTITY : MonoBehaviour
 {
     public string KeyInputs;
+    public Text console;
     void Start()
     {
-        Debug.Log("The current string has " + KeyInputs);
+        Debug.Log("Digital piano online.");
+        Debug.Log("Version 8.3.100. Press any key");
     }
 
     public void AddToString(string note)
@@ -421,14 +424,14 @@ public class _ENTITY : MonoBehaviour
 
         else
 		{
-            Debug.Log("Missing a note");
+            Debug.Log("Missing a note to complete sequence");
 		}
     }
 
     public void HARDRESET() 
     {
-        Debug.ClearDeveloperConsole();
         KeyInputs = ("");
-        Debug.Log("The current string has " + KeyInputs);
+        console.text = "";
+        Debug.Log("Sequence hard reset");
     }
 }

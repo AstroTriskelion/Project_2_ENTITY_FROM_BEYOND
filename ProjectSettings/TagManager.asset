@@ -14,6 +14,11 @@ TagManager:
   - SI
   - DO/8
   - ENTITY
+  - DO#
+  - RE#
+  - FA#
+  - SOL#
+  - LA#
   layers:
   - Default
   - TransparentFX
