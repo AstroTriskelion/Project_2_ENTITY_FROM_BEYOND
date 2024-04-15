@@ -23,407 +23,291 @@ public class _ENTITY : MonoBehaviour
     public void Conditions()
     {
         // DO //
-		if (KeyInputs.Contains("DODO"))
+        // MAJOR
+		if (KeyInputs.Contains("DOMISOL"))
 		{
-            Debug.Log("It has no delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("DORE"))
+        if (KeyInputs.Contains("MISOLDO/8"))
         {
-            Debug.Log("It has 1 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("DOMI"))
+        if (KeyInputs.Contains("SOLDO/8MI"))
         {
-            Debug.Log("It has 2 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("DOFA"))
+        // MINOR
+        if (KeyInputs.Contains("DORE#SOL"))
         {
-            Debug.Log("It has 3 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
+            Debug.Log("You played a major");
         }
-        if (KeyInputs.Contains("DOSOL"))
+        if (KeyInputs.Contains("RE#SOLDO/8"))
         {
-            Debug.Log("It has 4 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
+            Debug.Log("You played a major");
         }
-        if (KeyInputs.Contains("DOLA"))
+        if (KeyInputs.Contains("#SOLDO/8RE"))
         {
-            Debug.Log("It has 5 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
+            Debug.Log("You played a major");
         }
-        if (KeyInputs.Contains("DOSI"))
+        // AUGMENTED
+        if (KeyInputs.Contains("DOMISOL#"))
         {
-            Debug.Log("It has 6 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
+            Debug.Log("You played a major");
         }
-        if (KeyInputs.Contains("DODO/8"))
+        if (KeyInputs.Contains("MISOL#DO/8"))
         {
-            Debug.Log("It has 7 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
+            Debug.Log("You played a major");
+        }
+        if (KeyInputs.Contains("SOL#DO/8MI"))
+        {
+            KeyInputs = ("");
+            Debug.Log("You played a major");
+        }
+        // DIMINISHED
+        if (KeyInputs.Contains("DORE#FA#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("RE#FA#DO/8"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("FA#DO/8RE#"))
+        {
+            KeyInputs = ("");
+        }
+
+        // DO #//
+        // MAJOR
+        if (KeyInputs.Contains("DO#FASOL#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("FASOL#DO#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("SOL#DO#FA"))
+        {
+            KeyInputs = ("");
+        }
+        // MINOR
+        if (KeyInputs.Contains("DO#MISOL#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("MISOL#DO#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("SOL#DO#MI"))
+        {
+            KeyInputs = ("");
+        }
+        // AUGMENTED
+        if (KeyInputs.Contains("DO#FALA"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("FALADO#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("LADO#FA"))
+        {
+            KeyInputs = ("");
+        }
+        // DIMINISHED
+        if (KeyInputs.Contains("DO#MISOL"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("MISOLDO#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("SOLDO#MI"))
+        {
+            KeyInputs = ("");
         }
 
         // RE //
-        if (KeyInputs.Contains("REDO"))
+        // MAJOR
+        if (KeyInputs.Contains("REFA#LA"))
         {
-            Debug.Log("It has -1 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("RERE"))
+        if (KeyInputs.Contains("FA#LARE"))
         {
-            Debug.Log("It has no delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("REMI"))
+        if (KeyInputs.Contains("LAREFA#"))
         {
-            Debug.Log("It has 1 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("REFA"))
+        // MINOR
+        if (KeyInputs.Contains("REFALA"))
         {
-            Debug.Log("It has 2 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("RESOL"))
+        if (KeyInputs.Contains("FALARE"))
         {
-            Debug.Log("It has 3 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("RELA"))
+        if (KeyInputs.Contains("LAREFA"))
         {
-            Debug.Log("It has 4 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("RESI"))
+        // AUGMENTED
+        if (KeyInputs.Contains("REFA#LA#"))
         {
-            Debug.Log("It has 5 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("REDO/8"))
+        if (KeyInputs.Contains("FA#LA#RE"))
         {
-            Debug.Log("It has 6 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }       
+        }
+        if (KeyInputs.Contains("LA#REFA#"))
+        {
+            KeyInputs = ("");
+        }
+        // DIMINISHED
+        if (KeyInputs.Contains("REFASOL#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("FASOL#RE"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("SOL#REFA"))
+        {
+            KeyInputs = ("");
+        }
+
+        // RE# //
+        // MAJOR
+        if (KeyInputs.Contains("RE#SOLLA#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("SOLLA#RE#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("LA#RE#SOL"))
+        {
+            KeyInputs = ("");
+        }
+        // MINOR
+        if (KeyInputs.Contains("RE#FA#SI#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("FA#SI#RE#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("SI#RE#FA#"))
+        {
+            KeyInputs = ("");
+        }
+        // AUGMENTED
+        if (KeyInputs.Contains("RE#SOLSI"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("SOLSIRE#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("SIRE#SOL"))
+        {
+            KeyInputs = ("");
+        }
+        // DIMINISHED
+        if (KeyInputs.Contains("RE#FA#LA"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("FA#LARE#"))
+        {
+            KeyInputs = ("");
+        }
+        if (KeyInputs.Contains("LARE#FA#"))
+        {
+            KeyInputs = ("");
+        }
 
         // MI //
-        if (KeyInputs.Contains("MIDO"))
+        // MAJOR
+        if (KeyInputs.Contains("MISOL#SI"))
         {
-            Debug.Log("It has -2 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("MIRE"))
+        if (KeyInputs.Contains("SOL#SIMI"))
         {
-            Debug.Log("It has -1 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("MIMI"))
+        if (KeyInputs.Contains("SIMISOL#"))
         {
-            Debug.Log("It has no delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("MIFA"))
+        // MINOR
+        if (KeyInputs.Contains("MISOLSI"))
         {
-            Debug.Log("It has 1 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("MISOL"))
+        if (KeyInputs.Contains("SOLSIMI"))
         {
-            Debug.Log("It has 2 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("MILA"))
+        if (KeyInputs.Contains("SIMISOL"))
         {
-            Debug.Log("It has 3 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("MISI"))
+        // AUGMENTED
+        if (KeyInputs.Contains("MISOL#DO/8"))
         {
-            Debug.Log("It has 4 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("MIDO/8"))
+        if (KeyInputs.Contains("SOL#DO/8MI"))
         {
-            Debug.Log("It has 5 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }       
-        
-        // FA //
-        if (KeyInputs.Contains("FADO"))
-        {
-            Debug.Log("It has -3 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("FARE"))
+        if (KeyInputs.Contains("DO/8MISOL#"))
         {
-            Debug.Log("It has -2 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("FAMI"))
+        if (KeyInputs.Contains("DOMISOL#"))
         {
-            Debug.Log("It has -1 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("FAFA"))
+        if (KeyInputs.Contains("MISOL#DO"))
         {
-            Debug.Log("It has no delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("FASOL"))
+        // DIMINISHED
+        if (KeyInputs.Contains("RE#FA#LA"))
         {
-            Debug.Log("It has 1 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("FALA"))
+        if (KeyInputs.Contains("FA#LARE#"))
         {
-            Debug.Log("It has 2 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
-        if (KeyInputs.Contains("FASI"))
+        if (KeyInputs.Contains("LARE#FA#"))
         {
-            Debug.Log("It has 3 delay");
             KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("FADO/8"))
-        {
-            Debug.Log("It has 4 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-
-        // SOL //
-        if (KeyInputs.Contains("SOLDO"))
-        {
-            Debug.Log("It has -4 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SOLRE"))
-        {
-            Debug.Log("It has -3 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SOLMI"))
-        {
-            Debug.Log("It has -2 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SOLFA"))
-        {
-            Debug.Log("It has -1 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SOLSOL"))
-        {
-            Debug.Log("It has no delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SOLLA"))
-        {
-            Debug.Log("It has 1 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SOLSI"))
-        {
-            Debug.Log("It has 2 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SOLDO/8"))
-        {
-            Debug.Log("It has 3 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-
-        // LA //
-        if (KeyInputs.Contains("LADO"))
-        {
-            Debug.Log("It has -5 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("LARE"))
-        {
-            Debug.Log("It has -4 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("LAMI"))
-        {
-            Debug.Log("It has -3 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("LAFA"))
-        {
-            Debug.Log("It has -2 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("LASOL"))
-        {
-            Debug.Log("It has -1 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("LALA"))
-        {
-            Debug.Log("It has no delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("LASI"))
-        {
-            Debug.Log("It has 1 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("LADO/8"))
-        {
-            Debug.Log("It has 2 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-
-        // SI //
-        if (KeyInputs.Contains("SIDO"))
-        {
-            Debug.Log("It has -6 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SIRE"))
-        {
-            Debug.Log("It has -5 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SIMI"))
-        {
-            Debug.Log("It has -4 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SIFA"))
-        {
-            Debug.Log("It has -3 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SISOL"))
-        {
-            Debug.Log("It has -2 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SILA"))
-        {
-            Debug.Log("It has -1 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SISI"))
-        {
-            Debug.Log("It has no delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("SIDO/8"))
-        {
-            Debug.Log("It has 1 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-
-        // DO/8 //
-        if (KeyInputs.Contains("DO/8DO"))
-        {
-            Debug.Log("It has -7 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("DO/8RE"))
-        {
-            Debug.Log("It has -6 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("DO/8MI"))
-        {
-            Debug.Log("It has -5 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("DO/8FA"))
-        {
-            Debug.Log("It has -4 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("DO/8SOL"))
-        {
-            Debug.Log("It has -3 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("DO/8LA"))
-        {
-            Debug.Log("It has -2 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("DO/8SI"))
-        {
-            Debug.Log("It has -1 delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
-        }
-        if (KeyInputs.Contains("DO/8DO/8"))
-        {
-            Debug.Log("It has no delay");
-            KeyInputs = ("");
-            Debug.Log("The current string has " + KeyInputs);
         }
 
         else
-		{
+        {
             Debug.Log("Missing a note to complete sequence");
 		}
     }
