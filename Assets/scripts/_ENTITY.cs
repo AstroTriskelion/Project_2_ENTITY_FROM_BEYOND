@@ -22,290 +22,218 @@ public class _ENTITY : MonoBehaviour
 
     public void Conditions()
     {
-        // DO //
-        // MAJOR
-		if (KeyInputs.Contains("DOMISOL"))
+        if (KeyInputs.Length >= 9)
+        {
+            KeyInputs = "";
+            Debug.Log("SEQUENCE FAILED");
+        }
+
+        // DO or C//
+        // MAJOR // MINOR // AUGMENTED // DIMINISHED //
+        if (KeyInputs.Contains("DOMISOL") || KeyInputs.Contains("MISOLDO/8") || KeyInputs.Contains("SOLDO/8MI"))
 		{
             KeyInputs = ("");
+            Debug.Log("DO MAJOR PLAYED");
         }
-        if (KeyInputs.Contains("MISOLDO/8"))
+        else if (KeyInputs.Contains("DORE#SOL") || KeyInputs.Contains("RE#SOLDO/8") || KeyInputs.Contains("#SOLDO/8RE"))
         {
             KeyInputs = ("");
+            Debug.Log("DO MINOR PLAYED");
         }
-        if (KeyInputs.Contains("SOLDO/8MI"))
+        else if (KeyInputs.Contains("DOMISOL#") || KeyInputs.Contains("MISOL#DO/8") || KeyInputs.Contains("SOL#DO/8MI"))
         {
             KeyInputs = ("");
+            Debug.Log("DO AUGMENTED PLAYED");
+        }        
+        else if (KeyInputs.Contains("DORE#FA#") || KeyInputs.Contains("RE#FA#DO/8") || KeyInputs.Contains("FA#DO/8RE#"))
+        {
+            KeyInputs = ("DO DIMINISHED PLAYED");
         }
-        // MINOR
-        if (KeyInputs.Contains("DORE#SOL"))
+        
+        // DO# or C#//
+        // MAJOR// MINOR// AUGMENTED// DIMINISHED
+        if (KeyInputs.Contains("DO#FASOL#") || KeyInputs.Contains("FASOL#DO#") || KeyInputs.Contains("SOL#DO#FA"))
         {
             KeyInputs = ("");
-            Debug.Log("You played a major");
-        }
-        if (KeyInputs.Contains("RE#SOLDO/8"))
+            Debug.Log("DO# MAJOR PLAYED");        }        
+        if (KeyInputs.Contains("DO#MISOL#") || KeyInputs.Contains("MISOL#DO#") || KeyInputs.Contains("SOL#DO#MI"))
         {
             KeyInputs = ("");
-            Debug.Log("You played a major");
-        }
-        if (KeyInputs.Contains("#SOLDO/8RE"))
+            Debug.Log("DO# MINOR PLAYED");
+        }       
+        if (KeyInputs.Contains("DO#FALA") || KeyInputs.Contains("LADO#FA") || KeyInputs.Contains("FALADO#"))
         {
             KeyInputs = ("");
-            Debug.Log("You played a major");
-        }
-        // AUGMENTED
-        if (KeyInputs.Contains("DOMISOL#"))
+            Debug.Log("DO# AUGMENTED PLAYED");
+        }      
+        if (KeyInputs.Contains("DO#MISOL") || KeyInputs.Contains("MISOLDO#") || KeyInputs.Contains("SOLDO#MI"))
         {
             KeyInputs = ("");
-            Debug.Log("You played a major");
+            Debug.Log("DO# DIMISHED PLAYED");
         }
-        if (KeyInputs.Contains("MISOL#DO/8"))
+        
+        // RE or D//
+        // MAJOR// MINOR// AUGMENTED// DIMINISHED
+        if (KeyInputs.Contains("REFA#LA") || KeyInputs.Contains("FA#LARE") || KeyInputs.Contains("LAREFA#"))
         {
             KeyInputs = ("");
-            Debug.Log("You played a major");
-        }
-        if (KeyInputs.Contains("SOL#DO/8MI"))
+            Debug.Log("RE MAJOR PLAYED");
+        }   
+        else if (KeyInputs.Contains("REFALA") || KeyInputs.Contains("FALARE") || KeyInputs.Contains("LAREFA"))
         {
             KeyInputs = ("");
-            Debug.Log("You played a major");
-        }
-        // DIMINISHED
-        if (KeyInputs.Contains("DORE#FA#"))
+            Debug.Log("RE MINOR PLAYED");
+        }        
+        else if (KeyInputs.Contains("REFA#LA#") || KeyInputs.Contains("FA#LA#RE") || KeyInputs.Contains("LA#REFA#"))
         {
             KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("RE#FA#DO/8"))
+            Debug.Log("RE AUGMENTED PLAYED");
+        }       
+        else if (KeyInputs.Contains("REFASOL#") || KeyInputs.Contains("FASOL#RE") || KeyInputs.Contains("SOL#REFA"))
         {
             KeyInputs = ("");
+            Debug.Log("RE DIMISHED PLAYED");
         }
-        if (KeyInputs.Contains("FA#DO/8RE#"))
-        {
-            KeyInputs = ("");
-        }
-
-        // DO #//
-        // MAJOR
-        if (KeyInputs.Contains("DO#FASOL#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("FASOL#DO#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SOL#DO#FA"))
-        {
-            KeyInputs = ("");
-        }
-        // MINOR
-        if (KeyInputs.Contains("DO#MISOL#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("MISOL#DO#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SOL#DO#MI"))
-        {
-            KeyInputs = ("");
-        }
-        // AUGMENTED
-        if (KeyInputs.Contains("DO#FALA"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("FALADO#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("LADO#FA"))
-        {
-            KeyInputs = ("");
-        }
-        // DIMINISHED
-        if (KeyInputs.Contains("DO#MISOL"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("MISOLDO#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SOLDO#MI"))
-        {
-            KeyInputs = ("");
-        }
-
-        // RE //
-        // MAJOR
-        if (KeyInputs.Contains("REFA#LA"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("FA#LARE"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("LAREFA#"))
-        {
-            KeyInputs = ("");
-        }
-        // MINOR
-        if (KeyInputs.Contains("REFALA"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("FALARE"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("LAREFA"))
-        {
-            KeyInputs = ("");
-        }
-        // AUGMENTED
-        if (KeyInputs.Contains("REFA#LA#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("FA#LA#RE"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("LA#REFA#"))
-        {
-            KeyInputs = ("");
-        }
-        // DIMINISHED
-        if (KeyInputs.Contains("REFASOL#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("FASOL#RE"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SOL#REFA"))
-        {
-            KeyInputs = ("");
-        }
-
+        
         // RE# //
-        // MAJOR
-        if (KeyInputs.Contains("RE#SOLLA#"))
+        // MAJOR// MINOR// AUGMENTED// DIMINISHED
+        if (KeyInputs.Contains("RE#SOLLA#") || KeyInputs.Contains("SOLLA#RE#") || KeyInputs.Contains("LA#RE#SOL"))
         {
             KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SOLLA#RE#"))
+            Debug.Log("RE# MAJOR PLAYED");
+        }        
+        else if (KeyInputs.Contains("RE#FA#SI#") || KeyInputs.Contains("FA#SI#RE#") || KeyInputs.Contains("SI#RE#FA#"))
         {
             KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("LA#RE#SOL"))
+            Debug.Log("RE# MINOR PLAYED");
+        }        
+        else if (KeyInputs.Contains("RE#SOLSI") || KeyInputs.Contains("SOLSIRE#") || KeyInputs.Contains("SIRE#SOL"))
         {
             KeyInputs = ("");
-        }
-        // MINOR
-        if (KeyInputs.Contains("RE#FA#SI#"))
+            Debug.Log("RE# AUGMENTED PLAYED");
+        }        
+        else if (KeyInputs.Contains("RE#FA#LA") || KeyInputs.Contains("FA#LARE#") || KeyInputs.Contains("LARE#FA#"))
         {
             KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("FA#SI#RE#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SI#RE#FA#"))
-        {
-            KeyInputs = ("");
-        }
-        // AUGMENTED
-        if (KeyInputs.Contains("RE#SOLSI"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SOLSIRE#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SIRE#SOL"))
-        {
-            KeyInputs = ("");
-        }
-        // DIMINISHED
-        if (KeyInputs.Contains("RE#FA#LA"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("FA#LARE#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("LARE#FA#"))
-        {
-            KeyInputs = ("");
-        }
+            Debug.Log("RE# DIMINISHED PLAYED");
+        }     
 
         // MI //
-        // MAJOR
-        if (KeyInputs.Contains("MISOL#SI"))
+        // MAJOR// MINOR// AUGMENTED// DIMINISHED
+        if (KeyInputs.Contains("MISOL#SI") || KeyInputs.Contains("SOL#SIMI") || KeyInputs.Contains("SIMISOL#"))
         {
             KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SOL#SIMI"))
+            Debug.Log("MI MAJOR PLAYED");
+        }       
+        else if (KeyInputs.Contains("MISOLSI") || KeyInputs.Contains("SOLSIMI") || KeyInputs.Contains("SIMISOL"))
         {
             KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SIMISOL#"))
+            Debug.Log("MI MINOR PLAYED");
+        }              
+        else if (KeyInputs.Contains("MISOL#DO/8") || KeyInputs.Contains("SOL#DO/8MI") || KeyInputs.Contains("DO/8MISOL#") || KeyInputs.Contains("DOMISOL#") || KeyInputs.Contains("MISOL#DO"))
         {
             KeyInputs = ("");
-        }
-        // MINOR
-        if (KeyInputs.Contains("MISOLSI"))
+            Debug.Log("MI AUGMENTED PLAYED");
+        }               
+        else if (KeyInputs.Contains("MISOLLA#") || KeyInputs.Contains("SOLLA#MI") || KeyInputs.Contains("LA#MISOL"))
         {
             KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SOLSIMI"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SIMISOL"))
-        {
-            KeyInputs = ("");
-        }
-        // AUGMENTED
-        if (KeyInputs.Contains("MISOL#DO/8"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("SOL#DO/8MI"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("DO/8MISOL#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("DOMISOL#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("MISOL#DO"))
-        {
-            KeyInputs = ("");
-        }
-        // DIMINISHED
-        if (KeyInputs.Contains("RE#FA#LA"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("FA#LARE#"))
-        {
-            KeyInputs = ("");
-        }
-        if (KeyInputs.Contains("LARE#FA#"))
-        {
-            KeyInputs = ("");
+            Debug.Log("MI DIMINISHED PLAYED");
         }
 
+        // FA //
+        // MAJOR// MINOR// AUGMENTED// DIMINISHED
+        if (KeyInputs.Contains("FALADO/8") || KeyInputs.Contains("LADO/8FA") || KeyInputs.Contains("DO/8FALA") || KeyInputs.Contains("DOFALA"))
+        {
+            KeyInputs = ("");
+            Debug.Log("FA MAJOR PLAYED");
+        }
+        else if (KeyInputs.Contains("FASOL#DO/8") || KeyInputs.Contains("SOL#DO/8FA") || KeyInputs.Contains("DO/8FASOL#") || KeyInputs.Contains("DOFASOL#"))
+        {
+            KeyInputs = ("");
+            Debug.Log("FA MINOR PLAYED");
+        }
+        else if (KeyInputs.Contains("FALADO#") || KeyInputs.Contains("LADO#FA") || KeyInputs.Contains("DO#FALA"))
+        {
+            KeyInputs = ("");
+            Debug.Log("FA AUGMENTED PLAYED");
+        }
+        else if (KeyInputs.Contains("FASOL#SI") || KeyInputs.Contains("SOL#SIFA") || KeyInputs.Contains("SIFASOL#"))
+        {
+            KeyInputs = ("");
+            Debug.Log("FA DIMINISHED PLAYED");
+        }
+
+        // FA# //
+        // MAJOR// MINOR// AUGMENTED// DIMINISHED
+        if (KeyInputs.Contains("FA#LA#DO#") || KeyInputs.Contains("LA#DO#FA#") || KeyInputs.Contains("DO#FA#LA#"))
+        {
+            KeyInputs = ("");
+            Debug.Log("FA# MAJOR PLAYED");
+        }
+        else if (KeyInputs.Contains("FA#LADO#") || KeyInputs.Contains("LADO#FA#") || KeyInputs.Contains("DO#FA#LA"))
+        {
+            KeyInputs = ("");
+            Debug.Log("FA# MINOR PLAYED");
+        }
+        else if (KeyInputs.Contains("FA#LA#RE") || KeyInputs.Contains("LA#REFA#") || KeyInputs.Contains("REFA#LA#"))
+        {
+            KeyInputs = ("");
+            Debug.Log("FA# AUGMENTED PLAYED");
+        }
+        else if (KeyInputs.Contains("FA#LADO/8") || KeyInputs.Contains("LADO/8FA#") || KeyInputs.Contains("DO/8FA#LA") || KeyInputs.Contains("DOFA#LA"))
+        {
+            KeyInputs = ("");
+            Debug.Log("FA# DIMINISHED PLAYED");
+        }
+
+        // SOL //
+        // MAJOR// MINOR// AUGMENTED// DIMINISHED
+        if (KeyInputs.Contains("SOLSIRE") || KeyInputs.Contains("SIRESOL") || KeyInputs.Contains("RESOLSI"))
+        {
+            KeyInputs = ("");
+            Debug.Log("SOL MAJOR PLAYED");
+        }
+        else if (KeyInputs.Contains("SOLLA#RE") || KeyInputs.Contains("LA#RESOL") || KeyInputs.Contains("RESOLLA#"))
+        {
+            KeyInputs = ("");
+            Debug.Log("SOL MINOR PLAYED");
+        }
+        else if (KeyInputs.Contains("SOLSIRE#") || KeyInputs.Contains("SIRE#SOL") || KeyInputs.Contains("RE#SOLSI"))
+        {
+            KeyInputs = ("");
+            Debug.Log("SOL AUGMENTED PLAYED");
+        }
+        else if (KeyInputs.Contains("SOLLA#DO#") || KeyInputs.Contains("LA#DO#SOL") || KeyInputs.Contains("DO#SOLLA#"))
+        {
+            KeyInputs = ("");
+            Debug.Log("SOL DIMINISHED PLAYED");
+        }
+
+        // SOL# //
+        // MAJOR// MINOR// AUGMENTED// DIMINISHED
+        if (KeyInputs.Contains("SOL#DO/8RE#") || KeyInputs.Contains("DO/8RE#SOL#") || KeyInputs.Contains("RE#SOL#DO/8") || KeyInputs.Contains("SOL#DORE#") || KeyInputs.Contains("DORE#SOL#") || KeyInputs.Contains("RE#SOL#DO"))
+        {
+            KeyInputs = ("");
+            Debug.Log("SOL MAJOR PLAYED");
+        }
+        else if (KeyInputs.Contains("SOLLA#RE") || KeyInputs.Contains("LA#RESOL") || KeyInputs.Contains("RESOLLA#"))
+        {
+            KeyInputs = ("");
+            Debug.Log("SOL MINOR PLAYED");
+        }
+        else if (KeyInputs.Contains("SOLSIRE#") || KeyInputs.Contains("SIRE#SOL") || KeyInputs.Contains("RE#SOLSI"))
+        {
+            KeyInputs = ("");
+            Debug.Log("SOL AUGMENTED PLAYED");
+        }
+        else if (KeyInputs.Contains("SOLLA#DO#") || KeyInputs.Contains("LA#DO#SOL") || KeyInputs.Contains("DO#SOLLA#"))
+        {
+            KeyInputs = ("");
+            Debug.Log("SOL DIMINISHED PLAYED");
+        }
+
+        
         else
         {
             Debug.Log("Missing a note to complete sequence");

@@ -4362,6 +4362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainPlayArea
       objectReference: {fileID: 0}
+    - target: {fileID: 7461833933317301565, guid: 3e50c2404055658418cf5a7218ba2c05, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8109586907907386382, guid: 3e50c2404055658418cf5a7218ba2c05, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.016
