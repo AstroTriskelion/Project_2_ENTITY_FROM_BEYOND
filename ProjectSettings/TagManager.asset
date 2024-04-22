@@ -19,6 +19,8 @@ TagManager:
   - FA#
   - SOL#
   - LA#
+  - HEAVY
+  - LIGHT
   layers:
   - Default
   - TransparentFX
