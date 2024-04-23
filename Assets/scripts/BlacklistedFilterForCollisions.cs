@@ -16,7 +16,7 @@ public class BlacklistedFilterForCollisions : MonoBehaviour
 
     [SerializeField] private float TimeToBeTrimmed = 1.0f;
 
-    private GameObject MainEntity;
+    public GameObject MainEntity;
 
     private void Update()
     {
@@ -51,15 +51,6 @@ public class BlacklistedFilterForCollisions : MonoBehaviour
         if (!CanUseBlacklist)
         {
             Debug.Log(other.gameObject.name);
-            if(other.gameObject.tag == "HEAVY")
-            {
-                MainEntity.GetComponent<_ENTITY>().REACT1();
-            }
-            else if (other.gameObject.tag == "LIGHT")
-            {
-                MainEntity.GetComponent<_ENTITY>().REACT2();
-            }
-
             return;
         }
 
@@ -70,6 +61,15 @@ public class BlacklistedFilterForCollisions : MonoBehaviour
         BlacklistedColliders.Add(new BlacklistItem() { Object = other, CurrentTime = 0 });
 
         Debug.Log(other.gameObject.name);
+        if(other.gameObject.tag == "HEAVY")
+            {
+                StartCoroutine(MainEntity.GetComponent<_ENTITY>().REACT1());
+            }
+            else if (other.gameObject.tag == "LIGHT")
+            {
+                StartCoroutine(MainEntity.GetComponent<_ENTITY>().REACT2());
+                
+            }
     }
 
     private bool DoesBlacklistContainItem(Collision CollidedObject)
