@@ -5,11 +5,19 @@ using UnityEngine.UI;
 
 public class _ENTITY : MonoBehaviour
 {
+    [Header("PIANO SEQUENCE \n")]
     public string KeyInputs;
-    public Text console;
+    private string Type_Input;
 
-    //*//
-    public Material yellow;
+	[Header("CONSOLE DISPLAY FOR PIANO INPUTS \n")]
+	public Text console;
+
+	[Header("USER CAMERA FOR ENTITY TO LOOK AT \n")]
+	public Transform Target;
+
+	//*//
+	[Header("// TEMPORARY // \n")]
+	public Material yellow;
     public Material blue;
     public Material white;
     private MeshRenderer meshRenderer;
@@ -21,8 +29,12 @@ public class _ENTITY : MonoBehaviour
         console.text = console.text + "Version 8.3.100. Press any key \n";
         meshRenderer = GetComponent<MeshRenderer>();
     }
+	void Update()
+	{
+		transform.LookAt(Target);
+	}
 
-    public void AddToString(string note)
+	public void AddToString(string note)
 	{
         KeyInputs = KeyInputs + note;
         console.text = console.text + "The current string has " + KeyInputs + "\n";
@@ -39,7 +51,8 @@ public class _ENTITY : MonoBehaviour
 		{
             KeyInputs = ("");
             console.text = console.text + "DO MAJOR PLAYED\n";
-        }
+			POSITIVE_REACT("DO_MAJOR");
+		}
         else if (KeyInputs.Contains("DORE#SOL") || KeyInputs.Contains("RE#SOLDO/8") || KeyInputs.Contains("#SOLDO/8RE"))
         {
             KeyInputs = ("");
@@ -60,7 +73,9 @@ public class _ENTITY : MonoBehaviour
         if (KeyInputs.Contains("DO#FASOL#") || KeyInputs.Contains("FASOL#DO#") || KeyInputs.Contains("SOL#DO#FA"))
         {
             KeyInputs = ("");
-            console.text = console.text + "DO# MAJOR PLAYED";        }        
+            console.text = console.text + "DO# MAJOR PLAYED";
+			POSITIVE_REACT("DO#_MAJOR");
+		}        
         if (KeyInputs.Contains("DO#MISOL#") || KeyInputs.Contains("MISOL#DO#") || KeyInputs.Contains("SOL#DO#MI"))
         {
             KeyInputs = ("");
@@ -83,7 +98,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"RE MAJOR PLAYED\n";
-        }   
+			POSITIVE_REACT("RE_MAJOR");
+		}   
         else if (KeyInputs.Contains("REFALA") || KeyInputs.Contains("FALARE") || KeyInputs.Contains("LAREFA"))
         {
             KeyInputs = ("");
@@ -106,7 +122,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"RE# MAJOR PLAYED\n";
-        }        
+			POSITIVE_REACT("RE#_MAJOR");
+		}        
         else if (KeyInputs.Contains("RE#FA#SI#") || KeyInputs.Contains("FA#SI#RE#") || KeyInputs.Contains("SI#RE#FA#"))
         {
             KeyInputs = ("");
@@ -129,7 +146,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"MI MAJOR PLAYED\n";
-        }       
+			POSITIVE_REACT("MI_MAJOR");
+		}       
         else if (KeyInputs.Contains("MISOLSI") || KeyInputs.Contains("SOLSIMI") || KeyInputs.Contains("SIMISOL"))
         {
             KeyInputs = ("");
@@ -152,7 +170,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"FA MAJOR PLAYED\n";
-        }
+			POSITIVE_REACT("FA_MAJOR");
+		}
         else if (KeyInputs.Contains("FASOL#DO/8") || KeyInputs.Contains("SOL#DO/8FA") || KeyInputs.Contains("DO/8FASOL#") || KeyInputs.Contains("DOFASOL#"))
         {
             KeyInputs = ("");
@@ -175,7 +194,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"FA# MAJOR PLAYED\n";
-        }
+			POSITIVE_REACT("FA#_MAJOR");
+		}
         else if (KeyInputs.Contains("FA#LADO#") || KeyInputs.Contains("LADO#FA#") || KeyInputs.Contains("DO#FA#LA"))
         {
             KeyInputs = ("");
@@ -198,7 +218,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"SOL MAJOR PLAYED\n";
-        }
+			POSITIVE_REACT("SOL_MAJOR");
+		}
         else if (KeyInputs.Contains("SOLLA#RE") || KeyInputs.Contains("LA#RESOL") || KeyInputs.Contains("RESOLLA#"))
         {
             KeyInputs = ("");
@@ -221,7 +242,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"SOL MAJOR PLAYED\n";
-        }
+			POSITIVE_REACT("SOL#_MAJOR");
+		}
         else if (KeyInputs.Contains("SOL#SIRE#") || KeyInputs.Contains("SIRE#SOL#") || KeyInputs.Contains("RE#SOL#SI"))
         {
             KeyInputs = ("");
@@ -244,7 +266,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"LA MAJOR PLAYED\n";
-        }
+			POSITIVE_REACT("LA_MAJOR");
+		}
         else if (KeyInputs.Contains("LADO/8MI") || KeyInputs.Contains("DO/8MILA") || KeyInputs.Contains("MILADO/8") || KeyInputs.Contains("DOMILA"))
         {
             KeyInputs = ("");
@@ -267,7 +290,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"LA# MAJOR PLAYED\n";
-        }
+			POSITIVE_REACT("LA#_MAJOR");
+		}
         else if (KeyInputs.Contains("LA#DO#FA") || KeyInputs.Contains("DO#FALA#") || KeyInputs.Contains("FALA#DO#"))
         {
             KeyInputs = ("");
@@ -290,7 +314,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"SI MAJOR PLAYED\n";
-        }
+			POSITIVE_REACT("SI_MAJOR");
+		}
         else if (KeyInputs.Contains("SIREFA#") || KeyInputs.Contains("REFA#SI") || KeyInputs.Contains("FA#SIRE"))
         {
             KeyInputs = ("");
@@ -298,14 +323,14 @@ public class _ENTITY : MonoBehaviour
         }
         else if (KeyInputs.Contains("SIRE#SOL") || KeyInputs.Contains("RE#SOLSI") || KeyInputs.Contains("#SOLSIRE"))
         {
-            KeyInputs = ("");
             console.text = console.text +"SI AUGMENTED PLAYED\n";
-        }
+			KeyInputs = ("");
+		}
         else if (KeyInputs.Contains("SIREFA") || KeyInputs.Contains("REFASI") || KeyInputs.Contains("FASIRE"))
         {
-            KeyInputs = ("");
             console.text = console.text +"SI DIMINISHED PLAYED\n";
-        }
+			THE_ULTIMATE_ONES();
+		}
         
         if (KeyInputs.Length >= 9)
         {
@@ -339,5 +364,44 @@ public class _ENTITY : MonoBehaviour
 
     }
 
-    
+    public void POSITIVE_REACT(string type1)
+    {
+        if (type1 == Type_Input)
+        {
+            // play neutral
+        }
+
+        else if (type1 != Type_Input)
+        {
+            Type_Input = type1;
+			// play happy
+
+		}
+	}
+
+	public void OTHER_REACT(string type2)
+	{
+		if (type2 == "SAD")
+		{
+			// play sad
+		}
+
+		else if (type2 == "ANGRY")
+		{
+			// play angry
+		}
+
+		else if (type2 == "NEUTRAL")
+		{
+			// play neutral
+		}
+	}
+
+	public void THE_ULTIMATE_ONES()
+	{
+		KeyInputs = ("");
+		console.text = "";
+		console.text = "*/#|§! LOCATION AQUIRED */£#| \n*/#»! RISE FROM THE DEEP */£#%%% \n »«»*?«! TERMINATION AUTORISED */£§#| \n";
+	}
+
 }
