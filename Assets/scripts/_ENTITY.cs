@@ -15,6 +15,10 @@ public class _ENTITY : MonoBehaviour
 	[Header("USER CAMERA FOR ENTITY TO LOOK AT \n")]
 	public Transform Target;
 
+	[Header("The ARRIVAL \n")]
+    public GameObject THE_ARRIVAL;
+    public GameObject AudioManager;
+
 	//*//
 	[Header("// TEMPORARY // \n")]
 	public Material yellow;
@@ -28,6 +32,7 @@ public class _ENTITY : MonoBehaviour
         console.text = "Digital piano online.\n";
         console.text = console.text + "Version 8.3.100. Press any key \n";
         meshRenderer = GetComponent<MeshRenderer>();
+
     }
 	void Update()
 	{
@@ -402,6 +407,16 @@ public class _ENTITY : MonoBehaviour
 		KeyInputs = ("");
 		console.text = "";
 		console.text = "*/#|§! LOCATION AQUIRED */£#| \n*/#»! RISE FROM THE DEEP */£#%%% \n »«»*?«! TERMINATION AUTORISED */£§#| \n";
+        THE_ARRIVAL.SetActive(true);
+        AudioManager.GetComponent<_Background_Sounds>().CutMusic();
+        
+	}
+
+	public void hint()
+	{
+		KeyInputs = ("");
+		console.text = "";
+		console.text = "Emergency:\n%/ Th£ s£Qu£nC£ oF\ns@Lv@Ti0n\nHid£s be||ow th£ d£$K\n";
 	}
 
 }

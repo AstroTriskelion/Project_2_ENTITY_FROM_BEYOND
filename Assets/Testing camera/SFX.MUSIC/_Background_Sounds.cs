@@ -5,12 +5,17 @@ using UnityEngine.Audio;
 
 public class _Background_Sounds : MonoBehaviour
 {
-    public AudioMixerSnapshot Music1;
+	[Header("AUDIO MIXER WITH DIFFERENT BACKGROUND OST \n")]
+	public AudioMixerSnapshot Music1;
     public AudioMixerSnapshot Music2;
     public AudioMixerSnapshot Music3;
-    public float NumberMusic;
+	public AudioMixerSnapshot Music4;
+	private float NumberMusic;
+	[Header("ENTITY CONNECTION \n")]
+	public GameObject ENTITY;
+	public GameObject SFX_HELP;
 
-    void Start()
+	void Start()
     {
         NumberMusic = 0;
     }
@@ -32,6 +37,21 @@ public class _Background_Sounds : MonoBehaviour
         {
             Music3.TransitionTo(3);
             NumberMusic = 0;
-        }
-    }
+			ENTITY.GetComponent<_ENTITY>().hint();
+			SFX_HELP.SetActive(true);
+		}
+		else
+		return;
+			
+		
+	}
+
+	public void CutMusic()
+		{
+			Music4.TransitionTo(0);
+			NumberMusic = 4;
+		}
+
+	
 }
+
