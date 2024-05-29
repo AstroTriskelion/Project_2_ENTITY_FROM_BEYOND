@@ -19,24 +19,25 @@ public class _ENTITY : MonoBehaviour
     public GameObject THE_ARRIVAL;
     public GameObject AudioManager;
 
-	//*//
-	[Header("// TEMPORARY // \n")]
-	public Material yellow;
-    public Material blue;
-    public Material white;
-    private MeshRenderer meshRenderer;
+    //*//
+    [Header("// ENTITY ANIMATOR // \n")]
+    Animator Entity_Animator;
+    public GameObject E_Entity;
+	
 
 
-    void Start()
+	void Start()
     {
         console.text = "Digital piano online.\n";
         console.text = console.text + "Version 8.3.100. Press any key \n";
-        meshRenderer = GetComponent<MeshRenderer>();
+        Entity_Animator = gameObject.GetComponent<Animator>();
+        //E_Entity.transform.eulerAngles = new Vector3(E_Entity.transform.eulerAngles.x, -155, E_Entity.transform.eulerAngles.z);
 
     }
 	void Update()
 	{
-		transform.LookAt(Target);
+		E_Entity.transform.LookAt(Target);
+		E_Entity.transform.eulerAngles = new Vector3(E_Entity.transform.eulerAngles.x, E_Entity.transform.eulerAngles.y -90, E_Entity.transform.eulerAngles.z);
 	}
 
 	public void AddToString(string note)
@@ -62,16 +63,21 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text + "DO MINOR PLAYED\n";
-        }
+            OTHER_REACT("SAD");
+
+		}
         else if (KeyInputs.Contains("DOMISOL#") || KeyInputs.Contains("MISOL#DO/8") || KeyInputs.Contains("SOL#DO/8MI"))
         {
             KeyInputs = ("");
             console.text = console.text + "DO AUGMENTED PLAYED\n";
-        }        
+			OTHER_REACT("ANGRY");
+		}        
         else if (KeyInputs.Contains("DORE#FA#") || KeyInputs.Contains("RE#FA#DO/8") || KeyInputs.Contains("FA#DO/8RE#"))
         {
+			KeyInputs = (""); 
             console.text = console.text + "DO DIMINISHED PLAYED";
-        }
+			OTHER_REACT("NEUTRAL");
+		}
         
         // DO# or C#//
         // MAJOR// MINOR// AUGMENTED// DIMINISHED
@@ -85,17 +91,20 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"DO# MINOR PLAYED\n";
-        }       
+			OTHER_REACT("SAD");
+		}       
         if (KeyInputs.Contains("DO#FALA") || KeyInputs.Contains("LADO#FA") || KeyInputs.Contains("FALADO#"))
         {
             KeyInputs = ("");
             console.text = console.text +"DO# AUGMENTED PLAYED\n";
-        }      
+			OTHER_REACT("NEUTRAL");
+		}      
         if (KeyInputs.Contains("DO#MISOL") || KeyInputs.Contains("MISOLDO#") || KeyInputs.Contains("SOLDO#MI"))
         {
             KeyInputs = ("");
             console.text = console.text +"DO# DIMISHED PLAYED\n";
-        }
+			OTHER_REACT("ANGRY");
+		}
         
         // RE or D//
         // MAJOR// MINOR// AUGMENTED// DIMINISHED
@@ -109,7 +118,8 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"RE MINOR PLAYED\n";
-        }        
+			OTHER_REACT("SAD");
+		}        
         else if (KeyInputs.Contains("REFA#LA#") || KeyInputs.Contains("FA#LA#RE") || KeyInputs.Contains("LA#REFA#"))
         {
             KeyInputs = ("");
@@ -133,17 +143,20 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"RE# MINOR PLAYED\n";
-        }        
+			OTHER_REACT("SAD");
+		}        
         else if (KeyInputs.Contains("RE#SOLSI") || KeyInputs.Contains("SOLSIRE#") || KeyInputs.Contains("SIRE#SOL"))
         {
             KeyInputs = ("");
             console.text = console.text +"RE# AUGMENTED PLAYED\n";
-        }        
+			OTHER_REACT("NEUTRAL");
+		}        
         else if (KeyInputs.Contains("RE#FA#LA") || KeyInputs.Contains("FA#LARE#") || KeyInputs.Contains("LARE#FA#"))
         {
             KeyInputs = ("");
             console.text = console.text +"RE# DIMINISHED PLAYED\n";
-        }     
+			OTHER_REACT("ANGRY");
+		}     
 
         // MI //
         // MAJOR// MINOR// AUGMENTED// DIMINISHED
@@ -157,17 +170,20 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"MI MINOR PLAYED\n";
-        }              
+			OTHER_REACT("SAD");
+		}              
         else if (KeyInputs.Contains("MISOL#DO/8") || KeyInputs.Contains("SOL#DO/8MI") || KeyInputs.Contains("DO/8MISOL#") || KeyInputs.Contains("DOMISOL#") || KeyInputs.Contains("MISOL#DO"))
         {
             KeyInputs = ("");
             console.text = console.text +"MI AUGMENTED PLAYED\n";
-        }               
+			OTHER_REACT("ANGRY");
+		}               
         else if (KeyInputs.Contains("MISOLLA#") || KeyInputs.Contains("SOLLA#MI") || KeyInputs.Contains("LA#MISOL"))
         {
             KeyInputs = ("");
             console.text = console.text +"MI DIMINISHED PLAYED\n";
-        }
+			OTHER_REACT("NEUTRAL");
+		}
 
         // FA //
         // MAJOR// MINOR// AUGMENTED// DIMINISHED
@@ -181,17 +197,20 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"FA MINOR PLAYED\n";
-        }
+			OTHER_REACT("SAD");
+		}
         else if (KeyInputs.Contains("FALADO#") || KeyInputs.Contains("LADO#FA") || KeyInputs.Contains("DO#FALA"))
         {
             KeyInputs = ("");
             console.text = console.text +"FA AUGMENTED PLAYED\n";
-        }
+			OTHER_REACT("NEUTRAL");
+		}
         else if (KeyInputs.Contains("FASOL#SI") || KeyInputs.Contains("SOL#SIFA") || KeyInputs.Contains("SIFASOL#"))
         {
             KeyInputs = ("");
             console.text = console.text +"FA DIMINISHED PLAYED\n";
-        }
+			OTHER_REACT("NEUTRAL");
+		}
 
         // FA# //
         // MAJOR// MINOR// AUGMENTED// DIMINISHED
@@ -205,17 +224,20 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"FA# MINOR PLAYED\n";
-        }
+			OTHER_REACT("SAD");
+		}
         else if (KeyInputs.Contains("FA#LA#RE") || KeyInputs.Contains("LA#REFA#") || KeyInputs.Contains("REFA#LA#"))
         {
             KeyInputs = ("");
             console.text = console.text +"FA# AUGMENTED PLAYED\n";
-        }
+			OTHER_REACT("ANGRY");
+		}
         else if (KeyInputs.Contains("FA#LADO/8") || KeyInputs.Contains("LADO/8FA#") || KeyInputs.Contains("DO/8FA#LA") || KeyInputs.Contains("DOFA#LA"))
         {
             KeyInputs = ("");
             console.text = console.text +"FA# DIMINISHED PLAYED\n";
-        }
+			OTHER_REACT("ANGRY");
+		}
 
         // SOL //
         // MAJOR// MINOR// AUGMENTED// DIMINISHED
@@ -229,17 +251,20 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"SOL MINOR PLAYED\n";
-        }
+			OTHER_REACT("SAD");
+		}
         else if (KeyInputs.Contains("SOLSIRE#") || KeyInputs.Contains("SIRE#SOL") || KeyInputs.Contains("RE#SOLSI"))
         {
             KeyInputs = ("");
             console.text = console.text +"SOL AUGMENTED PLAYED\n";
-        }
+			OTHER_REACT("NEUTRAL");
+		}
         else if (KeyInputs.Contains("SOLLA#DO#") || KeyInputs.Contains("LA#DO#SOL") || KeyInputs.Contains("DO#SOLLA#"))
         {
             KeyInputs = ("");
             console.text = console.text +"SOL DIMINISHED PLAYED\n";
-        }
+			OTHER_REACT("ANGRY");
+		}
 
         // SOL# //
         // MAJOR// MINOR// AUGMENTED// DIMINISHED
@@ -253,17 +278,20 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"SOL# MINOR PLAYED\n";
-        }
+			OTHER_REACT("SAD");
+		}
         else if (KeyInputs.Contains("SOL#DO/8MI") || KeyInputs.Contains("DO/8MISOL#") || KeyInputs.Contains("MISOL#DO/8") || KeyInputs.Contains("SOL#DOMI") || KeyInputs.Contains("DOMISOL#") || KeyInputs.Contains("MISOL#DO"))
         {
             KeyInputs = ("");
             console.text = console.text +"SOL# AUGMENTED PLAYED\n";
-        }
+			OTHER_REACT("ANGRY");
+		}
         else if (KeyInputs.Contains("SOL#SIRE") || KeyInputs.Contains("SIRESOL#") || KeyInputs.Contains("RESOL#SI"))
         {
             KeyInputs = ("");
             console.text = console.text +"SOL# DIMINISHED PLAYED\n";
-        }
+			OTHER_REACT("NEUTRAL");
+		}
 
         // LA //
         // MAJOR// MINOR// AUGMENTED// DIMINISHED
@@ -277,17 +305,20 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"LA MINOR PLAYED\n";
-        }
+			OTHER_REACT("SAD");
+		}
         else if (KeyInputs.Contains("LADO#FA") || KeyInputs.Contains("DO#FALA") || KeyInputs.Contains("FALADO#"))
         {
             KeyInputs = ("");
             console.text = console.text +"LA AUGMENTED PLAYED\n";
-        }
+			OTHER_REACT("NEUTRAL");
+		}
         else if (KeyInputs.Contains("LADO/8RE#") || KeyInputs.Contains("DO/8RE#LA") || KeyInputs.Contains("RE#LADO/8") || KeyInputs.Contains("DORE#LA"))
         {
             KeyInputs = ("");
             console.text = console.text +"LA DIMINISHED PLAYED\n";
-        }
+			OTHER_REACT("ANGRY");
+		}
 
         // LA# //
         // MAJOR// MINOR// AUGMENTED// DIMINISHED
@@ -301,17 +332,20 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"LA# MINOR PLAYED\n";
-        }
+			OTHER_REACT("SAD");
+		}
         else if (KeyInputs.Contains("LA#REFA#") || KeyInputs.Contains("REFA#LA#") || KeyInputs.Contains("FA#LA#RE"))
         {
             KeyInputs = ("");
             console.text = console.text +"LA# AUGMENTED PLAYED\n";
-        }
+			OTHER_REACT("NEUTRAL");
+		}
         else if (KeyInputs.Contains("LA#DO#MI") || KeyInputs.Contains("DO#MILA#") || KeyInputs.Contains("MILA#DO#"))
         {
             KeyInputs = ("");
             console.text = console.text +"LA# DIMINISHED PLAYED\n";
-        }
+			OTHER_REACT("ANGRY");
+		}
 
         // SI //
         // MAJOR// MINOR// AUGMENTED// DIMINISHED
@@ -325,11 +359,13 @@ public class _ENTITY : MonoBehaviour
         {
             KeyInputs = ("");
             console.text = console.text +"SI MINOR PLAYED\n";
-        }
+			OTHER_REACT("SAD");
+		}
         else if (KeyInputs.Contains("SIRE#SOL") || KeyInputs.Contains("RE#SOLSI") || KeyInputs.Contains("#SOLSIRE"))
         {
             console.text = console.text +"SI AUGMENTED PLAYED\n";
 			KeyInputs = ("");
+			OTHER_REACT("NEUTRAL");
 		}
         else if (KeyInputs.Contains("SIREFA") || KeyInputs.Contains("REFASI") || KeyInputs.Contains("FASIRE"))
         {
@@ -355,31 +391,22 @@ public class _ENTITY : MonoBehaviour
         console.text = "Sequence hard reset\n";
     }
 
-    public IEnumerator REACT1()
-    {
-        meshRenderer.material = blue;
-        yield return new WaitForSeconds(1);
-        meshRenderer.material = white;
-    }
-    public IEnumerator REACT2()
-    {
-        meshRenderer.material = yellow;
-        yield return new WaitForSeconds(1);
-        meshRenderer.material = white;
-
-    }
+    
+    
 
     public void POSITIVE_REACT(string type1)
     {
         if (type1 == Type_Input)
         {
             // play neutral
+            Entity_Animator.SetTrigger("Bored");
         }
 
         else if (type1 != Type_Input)
         {
             Type_Input = type1;
-			// play happy
+            // play happy
+            Entity_Animator.SetTrigger("Happy");
 
 		}
 	}
@@ -389,16 +416,19 @@ public class _ENTITY : MonoBehaviour
 		if (type2 == "SAD")
 		{
 			// play sad
+			Entity_Animator.SetTrigger("Sad");
 		}
 
 		else if (type2 == "ANGRY")
 		{
 			// play angry
+			Entity_Animator.SetTrigger("Angry");
 		}
 
 		else if (type2 == "NEUTRAL")
 		{
 			// play neutral
+			Entity_Animator.SetTrigger("Bored");
 		}
 	}
 
@@ -408,7 +438,8 @@ public class _ENTITY : MonoBehaviour
 		console.text = "";
 		console.text = "*/#|§! LOCATION AQUIRED */£#| \n*/#»! RISE FROM THE DEEP */£#%%% \n »«»*?«! TERMINATION AUTORISED */£§#| \n";
         THE_ARRIVAL.SetActive(true);
-        AudioManager.GetComponent<_Background_Sounds>().CutMusic();
+		Entity_Animator.SetTrigger("Rage");
+		AudioManager.GetComponent<_Background_Sounds>().CutMusic();
         
 	}
 

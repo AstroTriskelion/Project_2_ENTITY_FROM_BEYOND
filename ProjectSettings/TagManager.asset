@@ -21,6 +21,9 @@ TagManager:
   - LA#
   - HEAVY
   - LIGHT
+  - BORED1
+  - BORED2
+  - BORED3
   layers:
   - Default
   - TransparentFX

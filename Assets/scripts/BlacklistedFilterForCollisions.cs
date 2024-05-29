@@ -18,7 +18,7 @@ public class BlacklistedFilterForCollisions : MonoBehaviour
 
     public GameObject MainEntity;
 
-    private void Update()
+	private void Update()
     {
         if (BlacklistedColliders.Count == 0)
             return;
@@ -63,11 +63,11 @@ public class BlacklistedFilterForCollisions : MonoBehaviour
         Debug.Log(other.gameObject.name);
         if(other.gameObject.tag == "HEAVY")
             {
-                StartCoroutine(MainEntity.GetComponent<_ENTITY>().REACT1());
+                //StartCoroutine(MainEntity.GetComponent<_ENTITY>().REACT1());
             }
             else if (other.gameObject.tag == "LIGHT")
             {
-                StartCoroutine(MainEntity.GetComponent<_ENTITY>().REACT2());
+                //StartCoroutine(MainEntity.GetComponent<_ENTITY>().REACT2());
                 
             }
     }
