@@ -7,8 +7,8 @@ public class StateActivateObject : StateMachineBehaviour
 {
     public string TagToSearchFor;
 
-    public bool OnEnterState;
-    public bool OnExitState;
+    //public bool OnEnterState;
+    //public bool OnExitState;
 
     public GameObject objects;
 
@@ -19,7 +19,7 @@ public class StateActivateObject : StateMachineBehaviour
         //objects = GameObject.FindGameObjectWithTag(TagToSearchFor);
 		objects = GameObject.Find(TagToSearchFor);
 
-		objects.SetActive(OnEnterState); 
+		objects.SetActive(true); 
         
     }
 
@@ -32,7 +32,8 @@ public class StateActivateObject : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-		objects.SetActive(OnExitState);
+		objects = GameObject.Find(TagToSearchFor);
+		objects.SetActive(false);
 	}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

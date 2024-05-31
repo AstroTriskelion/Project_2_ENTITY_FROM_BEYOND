@@ -23,7 +23,8 @@ public class _ENTITY : MonoBehaviour
     [Header("// ENTITY ANIMATOR // \n")]
     Animator Entity_Animator;
     public GameObject E_Entity;
-	
+	public GameObject lids1;
+
 
 
 	void Start()
@@ -38,6 +39,8 @@ public class _ENTITY : MonoBehaviour
 	{
 		E_Entity.transform.LookAt(Target);
 		E_Entity.transform.eulerAngles = new Vector3(E_Entity.transform.eulerAngles.x, E_Entity.transform.eulerAngles.y -90, E_Entity.transform.eulerAngles.z);
+        
+            
 	}
 
 	public void AddToString(string note)
@@ -417,6 +420,7 @@ public class _ENTITY : MonoBehaviour
 		{
 			// play sad
 			Entity_Animator.SetTrigger("Sad");
+			
 		}
 
 		else if (type2 == "ANGRY")
@@ -428,8 +432,11 @@ public class _ENTITY : MonoBehaviour
 		else if (type2 == "NEUTRAL")
 		{
 			// play neutral
+			StartCoroutine(INVIS());
 			Entity_Animator.SetTrigger("Bored");
+			
 		}
+
 	}
 
 	public void THE_ULTIMATE_ONES()
@@ -448,6 +455,14 @@ public class _ENTITY : MonoBehaviour
 		KeyInputs = ("");
 		console.text = "";
 		console.text = "Emergency:\n%/ Th£ s£Qu£nC£ oF\ns@Lv@Ti0n\nHid£s be||ow th£ d£$K\n";
+	}
+	IEnumerator INVIS()
+	{
+		lids1.SetActive(true);
+		
+		yield return new WaitForSeconds(6);
+		
+		lids1.SetActive(false);
 	}
 
 }

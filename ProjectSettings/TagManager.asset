@@ -24,6 +24,9 @@ TagManager:
   - BORED1
   - BORED2
   - BORED3
+  - SadEye3
+  - SadEye2
+  - ALIEN
   layers:
   - Default
   - TransparentFX
