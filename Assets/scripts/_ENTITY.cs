@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class _ENTITY : MonoBehaviour
@@ -21,9 +22,19 @@ public class _ENTITY : MonoBehaviour
 
     //*//
     [Header("// ENTITY ANIMATOR // \n")]
-    Animator Entity_Animator;
-    public GameObject E_Entity;
+    Animator Entity_Animator1;
+	Animator Entity_Animator2;
+	Animator Entity_Animator3;
+	public GameObject Look_Origin_Enity;
+	[Header("// ENTITIES // \n")]
+	public GameObject Child;
+	public GameObject Youngling;
+	public GameObject Cosmos;
+	[Header("// ENTITIES EYELIDS // \n")]
 	public GameObject lids1;
+	public GameObject lids2;
+	public GameObject lids3;
+    public int grow = 3;
 
 
 
@@ -31,14 +42,18 @@ public class _ENTITY : MonoBehaviour
     {
         console.text = "Digital piano online.\n";
         console.text = console.text + "Version 8.3.100. Press any key \n";
-        Entity_Animator = gameObject.GetComponent<Animator>();
-        //E_Entity.transform.eulerAngles = new Vector3(E_Entity.transform.eulerAngles.x, -155, E_Entity.transform.eulerAngles.z);
+        //
+		Entity_Animator1 = Child.GetComponent<Animator>();
+		Entity_Animator2 = Youngling.GetComponent<Animator>();
+		Entity_Animator3 = Cosmos.GetComponent<Animator>();
+        //
+		//E_Entity.transform.eulerAngles = new Vector3(E_Entity.transform.eulerAngles.x, -155, E_Entity.transform.eulerAngles.z);
 
-    }
+	}
 	void Update()
 	{
-		E_Entity.transform.LookAt(Target);
-		E_Entity.transform.eulerAngles = new Vector3(E_Entity.transform.eulerAngles.x, E_Entity.transform.eulerAngles.y -90, E_Entity.transform.eulerAngles.z);
+		Look_Origin_Enity.transform.LookAt(Target);
+		Look_Origin_Enity.transform.eulerAngles = new Vector3(Look_Origin_Enity.transform.eulerAngles.x, Look_Origin_Enity.transform.eulerAngles.y -90, Look_Origin_Enity.transform.eulerAngles.z);
         
             
 	}
@@ -394,22 +409,25 @@ public class _ENTITY : MonoBehaviour
         console.text = "Sequence hard reset\n";
     }
 
-    
-    
 
     public void POSITIVE_REACT(string type1)
     {
         if (type1 == Type_Input)
         {
             // play neutral
-            Entity_Animator.SetTrigger("Bored");
-        }
+            Entity_Animator1.SetTrigger("Bored");
+			Entity_Animator2.SetTrigger("Bored");
+			Entity_Animator3.SetTrigger("Bored");
+		}
 
         else if (type1 != Type_Input)
         {
             Type_Input = type1;
             // play happy
-            Entity_Animator.SetTrigger("Happy");
+            Entity_Animator1.SetTrigger("Happy");
+			Entity_Animator2.SetTrigger("Happy");
+			Entity_Animator3.SetTrigger("Happy");
+            Entity_Growth();
 
 		}
 	}
@@ -419,22 +437,28 @@ public class _ENTITY : MonoBehaviour
 		if (type2 == "SAD")
 		{
 			// play sad
-			Entity_Animator.SetTrigger("Sad");
-			
+			Entity_Animator1.SetTrigger("Sad");
+			Entity_Animator2.SetTrigger("Sad");
+			Entity_Animator3.SetTrigger("Sad");
+
 		}
 
 		else if (type2 == "ANGRY")
 		{
 			// play angry
-			Entity_Animator.SetTrigger("Angry");
+			Entity_Animator1.SetTrigger("Angry");
+			Entity_Animator2.SetTrigger("Angry");
+			Entity_Animator3.SetTrigger("Angry");
 		}
 
 		else if (type2 == "NEUTRAL")
 		{
 			// play neutral
 			StartCoroutine(INVIS());
-			Entity_Animator.SetTrigger("Bored");
-			
+			Entity_Animator1.SetTrigger("Bored");
+			Entity_Animator2.SetTrigger("Bored");
+			Entity_Animator3.SetTrigger("Bored");
+
 		}
 
 	}
@@ -445,7 +469,12 @@ public class _ENTITY : MonoBehaviour
 		console.text = "";
 		console.text = "*/#|§! LOCATION AQUIRED */£#| \n*/#»! RISE FROM THE DEEP */£#%%% \n »«»*?«! TERMINATION AUTORISED */£§#| \n";
         THE_ARRIVAL.SetActive(true);
-		Entity_Animator.SetTrigger("Rage");
+        //
+		Entity_Animator1.SetTrigger("Rage");
+		Entity_Animator2.SetTrigger("Rage");
+		Entity_Animator3.SetTrigger("Rage");
+        StartCoroutine(terminate());
+		//
 		AudioManager.GetComponent<_Background_Sounds>().CutMusic();
         
 	}
@@ -459,10 +488,38 @@ public class _ENTITY : MonoBehaviour
 	IEnumerator INVIS()
 	{
 		lids1.SetActive(true);
-		
+		lids2.SetActive(true);
+		lids3.SetActive(true);
+
 		yield return new WaitForSeconds(6);
 		
 		lids1.SetActive(false);
+		lids2.SetActive(false);
+		lids3.SetActive(false);
 	}
 
+	IEnumerator terminate()
+	{
+		yield return new WaitForSeconds(20);
+
+		SceneManager.LoadScene("Project_2");
+	}
+
+	public void Entity_Growth()
+    {
+        grow = grow + 1;
+        if (grow == 5)
+        {
+			Child.SetActive(false);
+			Youngling.SetActive(true);
+			Cosmos.SetActive(false);
+		}
+		else if (grow == 10)
+		{
+			Child.SetActive(false);
+			Youngling.SetActive(false);
+			Cosmos.SetActive(true);
+		}
+
+	}
 }

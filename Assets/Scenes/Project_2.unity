@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 9088763}
   m_Layer: 0
   m_Name: Left Hand
-  m_TagString: Untagged
+  m_TagString: Hands
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13326,7 +13326,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 163
+  Priority: 191
   DopplerLevel: 1
   MinDistance: 15
   MaxDistance: 30
@@ -13706,8 +13706,14 @@ MonoBehaviour:
   Target: {fileID: 2114720224}
   THE_ARRIVAL: {fileID: 1337712294}
   AudioManager: {fileID: 1799733573}
-  E_Entity: {fileID: 0}
+  Look_Origin_Enity: {fileID: 0}
+  Child: {fileID: 0}
+  Youngling: {fileID: 0}
+  Cosmos: {fileID: 0}
   lids1: {fileID: 0}
+  lids2: {fileID: 0}
+  lids3: {fileID: 0}
+  grow: 3
 --- !u!1 &576071755 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4476571683994043093, guid: 3e50c2404055658418cf5a7218ba2c05, type: 3}
@@ -15155,7 +15161,7 @@ GameObject:
   - component: {fileID: 670741498}
   m_Layer: 0
   m_Name: Right Hand
-  m_TagString: Untagged
+  m_TagString: Hands
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34068,7 +34074,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482094012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 8.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34076,7 +34082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 14.1, y: -35}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482094014
@@ -34099,7 +34105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 08c83959ea877534c83c47f8a926f115, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb3ff49a63298714e82814ec37223e98, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38232,7 +38238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1712844073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41912,7 +41918,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 163
+  Priority: 211
   DopplerLevel: 1
   MinDistance: 15
   MaxDistance: 30
@@ -44845,6 +44851,7 @@ GameObject:
   - component: {fileID: 2066698522}
   - component: {fileID: 2066698524}
   - component: {fileID: 2066698523}
+  - component: {fileID: 2066698525}
   m_Layer: 0
   m_Name: _ENTITY
   m_TagString: ALIEN
@@ -44898,6 +44905,31 @@ MonoBehaviour:
   inPort: 5005
   outIP: 127.0.0.1
   outPort: 6969
+--- !u!114 &2066698525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066698521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb3c4e35df0de54e97c4b45a73935e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyInputs: 
+  console: {fileID: 1396219385}
+  Target: {fileID: 2114720224}
+  THE_ARRIVAL: {fileID: 1337712294}
+  AudioManager: {fileID: 1799733573}
+  Look_Origin_Enity: {fileID: 2066698521}
+  Child: {fileID: 3929121291908829019}
+  Youngling: {fileID: 919132149447907989}
+  Cosmos: {fileID: 8031954800208209079}
+  lids1: {fileID: 7522896054256892095}
+  lids2: {fileID: 8243644620225863604}
+  lids3: {fileID: 275055894597460159}
+  grow: 0
 --- !u!1 &2071377946
 GameObject:
   m_ObjectHideFlags: 0
@@ -47717,7 +47749,6 @@ GameObject:
   - component: {fileID: 3469287837231517579}
   - component: {fileID: 3469287837231517581}
   - component: {fileID: 3469287837231517580}
-  - component: {fileID: 3469287837231517582}
   m_Layer: 0
   m_Name: Entity_KID
   m_TagString: ENTITY
@@ -48584,7 +48615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanUseBlacklist: 1
   TimeToBeTrimmed: 1
-  MainEntity: {fileID: 919132149447907989}
+  MainEntity: {fileID: 2066698521}
 --- !u!135 &3469287837231517581
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -48606,25 +48637,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 30.549612
   m_Center: {x: -1.2680494, y: 0.00016307831, z: 0.7913362}
---- !u!114 &3469287837231517582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149447907989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abb3c4e35df0de54e97c4b45a73935e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeyInputs: 
-  console: {fileID: 1396219385}
-  Target: {fileID: 2114720224}
-  THE_ARRIVAL: {fileID: 1337712294}
-  AudioManager: {fileID: 1799733573}
-  E_Entity: {fileID: 2066698521}
-  lids1: {fileID: 8243644620225863604}
 --- !u!4 &3489177865079451323
 Transform:
   m_ObjectHideFlags: 0
@@ -48731,7 +48743,6 @@ GameObject:
   - component: {fileID: 4453174185758692834}
   - component: {fileID: 4453174185758692836}
   - component: {fileID: 4453174185758692835}
-  - component: {fileID: 4453174185758692837}
   m_Layer: 0
   m_Name: Entity_INFANT
   m_TagString: ENTITY
@@ -48998,7 +49009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanUseBlacklist: 1
   TimeToBeTrimmed: 1
-  MainEntity: {fileID: 3929121291908829019}
+  MainEntity: {fileID: 2066698521}
 --- !u!135 &4453174185758692836
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -49020,25 +49031,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 30.549612
   m_Center: {x: -1.2680494, y: 0.00016307831, z: 0.7913362}
---- !u!114 &4453174185758692837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3929121291908829019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abb3c4e35df0de54e97c4b45a73935e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeyInputs: 
-  console: {fileID: 1396219385}
-  Target: {fileID: 2114720224}
-  THE_ARRIVAL: {fileID: 1337712294}
-  AudioManager: {fileID: 1799733573}
-  E_Entity: {fileID: 2066698521}
-  lids1: {fileID: 7522896054256892095}
 --- !u!33 &4668581945768525534
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -50074,7 +50066,6 @@ GameObject:
   - component: {fileID: 8392387699411567971}
   - component: {fileID: 8392387699411567973}
   - component: {fileID: 8392387699411567972}
-  - component: {fileID: 8392387699411567974}
   m_Layer: 0
   m_Name: Entity_ADULT
   m_TagString: ENTITY
@@ -50257,7 +50248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanUseBlacklist: 1
   TimeToBeTrimmed: 1
-  MainEntity: {fileID: 8031954800208209079}
+  MainEntity: {fileID: 2066698521}
 --- !u!135 &8392387699411567973
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -50279,25 +50270,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 30.549612
   m_Center: {x: -1.2680494, y: 0.00016307831, z: 0.7913362}
---- !u!114 &8392387699411567974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8031954800208209079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abb3c4e35df0de54e97c4b45a73935e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeyInputs: 
-  console: {fileID: 1396219385}
-  Target: {fileID: 2114720224}
-  THE_ARRIVAL: {fileID: 1337712294}
-  AudioManager: {fileID: 1799733573}
-  E_Entity: {fileID: 2066698521}
-  lids1: {fileID: 275055894597460159}
 --- !u!23 &8437163116470230336
 MeshRenderer:
   m_ObjectHideFlags: 0

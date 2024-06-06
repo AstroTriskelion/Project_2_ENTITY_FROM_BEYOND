@@ -63,14 +63,19 @@ public class BlacklistedFilterForCollisions : MonoBehaviour
         Debug.Log(other.gameObject.name);
         if(other.gameObject.tag == "HEAVY")
             {
-                //StartCoroutine(MainEntity.GetComponent<_ENTITY>().REACT1());
+			    MainEntity.GetComponent<_ENTITY>().OTHER_REACT("ANGRY");
             }
-            else if (other.gameObject.tag == "LIGHT")
+        else if (other.gameObject.tag == "LIGHT")
             {
-                //StartCoroutine(MainEntity.GetComponent<_ENTITY>().REACT2());
-                
-            }
-    }
+			    MainEntity.GetComponent<_ENTITY>().POSITIVE_REACT("NAILED");
+
+		    }
+        else if (other.gameObject.tag == "Hands")
+		{
+			MainEntity.GetComponent<_ENTITY>().POSITIVE_REACT("HANDS");
+
+		}
+	}
 
     private bool DoesBlacklistContainItem(Collision CollidedObject)
     {

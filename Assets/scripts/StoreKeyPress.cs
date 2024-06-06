@@ -7,7 +7,7 @@ public class StoreKeyPress : MonoBehaviour
     private GameObject MainEntity;
     void Start()
     {
-        MainEntity = GameObject.FindGameObjectWithTag("ENTITY");
+        MainEntity = GameObject.FindGameObjectWithTag("ALIEN");
         Debug.Log("ENTITY CONNECTED");
     }
 

@@ -27,6 +27,7 @@ TagManager:
   - SadEye3
   - SadEye2
   - ALIEN
+  - Hands
   layers:
   - Default
   - TransparentFX
